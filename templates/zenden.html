@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SAM - Mental Manager</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="static/timer.css" />
+  <link rel="stylesheet" type="text/css" href="static/style.css" />
+  <script type="text/javascript" src="{{ url_for('static', filename='timer.js') }}"></script>
+</head>
+<style>
+    button {
+  background-color: #1e2736;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #00ff40;
+  color: #1e2736;
+}
+
+</style>
+<body>
+
+  <nav class="navbar"> 
+    <div class="container">         
+      <ul class="listitems">
+        <li><a href="/">Home</a></li> 
+        <li><a href="chatbot">Wellness Wingman</a></li> 
+        <li><a href="zenden">Zen Den</a></li> 
+        <li><a href="selfcare">Self Care</a></li>
+      </ul> 
+    </div> 
+  </nav>
+  
+
+  <div id="app">
+    
+    <main class="content">
+        <center>
+            <h1 style="color: rgb(0, 255, 47);"> Try and last 10 Minutes!</h1>
+          </center>
+      <div class="div_cronometro">
+        <h1 id="text_cronometro">00:00:00</h1>
+      </div>
+        
+      <div class="div_buttons">
+        <div class="button button_start" onclick="start()">
+          <p>START</p>
+        </div>
+
+        <div class="button button_pause" onclick="pause()">
+          <p>PAUSE</p>
+        </div>
+
+        <div class="button button_restart" onclick="restart()">
+          <p>RESTART</p>
+        </div>
+      </div>
+      <div style="height: 20px;"></div>
+
+      <div class="content">
+        <div>
+          <iframe src="{{ video }}" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+          <button onclick="window.location.reload();">GET ANOTHER VIDEO!</button>
+        </div>
+      </div>
+
+
+    </main>
+  </div>
+
+
+</body>
+
+</html>
